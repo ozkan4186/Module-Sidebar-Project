@@ -4,39 +4,37 @@ import { FaTimes } from 'react-icons/fa'
 import { social, links } from './data'
 import { Link } from 'react-router-dom'
 
-
 const Sidebar = ({open,setOpen}) => {
-
- 
-  
-  return (
-    
-    <div> 
+  return(
+    <div>
       <div className="images">
         <img src={logo} alt="" />
-       <i onClick={()=>setOpen(!open)}><FaTimes/></i>
+         {open && <FaTimes onClick={()=>setOpen(!open)}  /> }
       </div>
-      <div>
-        <ul>
-          {links.map((item)=>{
-            return(
-              <li > <Link to={item.url}><i>{item.icon} </i>{item.text}</Link></li>
-            )
-          })}
-
-        </ul>
-   
-      </div>
-      <div className="icons">
-        {social.map((icons)=>{
+      <div className="links">
+        {links.map((item)=>{
+          const{id,url,text,icon}=item;
           return(
-            <a  href={icons.url}> {icons.icon} </a>
+            <ul key={id} >
+              <li> <Link to={url} >{icon}{text}</Link></li>
+            </ul>
+          
+            
+          )
+        })}
+
+
+      </div>
+      <div className="social">
+        {social.map((item)=>{
+          const{id,url,icon}=item
+          return(
+            <Link  key={id} to={url} > {icon} </Link>
           )
         })}
       </div>
     </div>
-
-  ) 
+  )
 }
 
 export default Sidebar

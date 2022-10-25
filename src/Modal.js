@@ -5,9 +5,10 @@ const Modal = () => {
   const navigate=useNavigate()
   return (
     <div>
-   <i onClick={()=>navigate("/")} ><FaTimes/></i>
+      <h2>Modal</h2>
+      <i onClick={()=>navigate("/")} > <FaTimes/> </i>
     </div>
-  )
+  ) 
 }
 
 export default Modal
