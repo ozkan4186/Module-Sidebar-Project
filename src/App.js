@@ -9,7 +9,8 @@ function App() {
   
    <Routes>
       <Route path='/' element={<Home/>}>
-          <Route path='' element={<Sidebar />}/>
+          <Route path='/sidebar' element={<Sidebar />}/>
+          <Route path='modal' element={<Modal/>}/>
       </Route> 
 
       {/* <Route path='/team' element={<Home/>}/>
