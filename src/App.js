@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal from './Modal'
 import Sidebar from './Sidebar'
-import Home from './pages/Home'
+import Home from './Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Calendar from './pages/Calendar'
 import Team from './pages/Team'
@@ -15,12 +15,13 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}  >
            <Route path='modal' element={<Modal/>}/>
+            <Route path='sidebar' element={<Sidebar/>}/>
+       
            </Route>
         <Route path='calendar' element={<Calendar/>}/>
         <Route path='team' element={<Team/>}/>
         <Route path='projects' element={<Projects/>}/>
         <Route path='documents' element={<Documents/>}/>
-        <Route path='sidebar' element={<Sidebar/>}/>
        
 
        
