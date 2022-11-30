@@ -1,21 +1,8 @@
-import React, { useContext } from 'react'
-import { useState } from 'react'
-import { FaBars } from 'react-icons/fa'
-import { Outlet, useNavigate } from 'react-router-dom'
-import Sidebar from './Sidebar'
+import React from 'react'
 
 const Home = () => {
-  const navigate=useNavigate()
-
-  const [open, setOpen] = useState(false)
-
-  return(
-    <div >
-    <FaBars onClick={()=>setOpen(!open)}/> 
-       {open && <Sidebar open={open} setOpen={setOpen}/>}
-       <button className='text-center' onClick={()=>navigate("/modal")} > SHOW MODAL </button>
-       <Outlet/>
-      </div>
+  return (
+    <div>Home</div>
   )
 }
 

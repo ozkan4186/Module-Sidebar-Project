@@ -1,45 +1,30 @@
-import React from "react";
-import logo from "./logo.svg";
-import { FaTimes } from "react-icons/fa";
-import { social, links } from "./data";
-import { Link } from "react-router-dom";
+import { render } from '@testing-library/react';
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
-const Sidebar = ({ open, setOpen }) => {
+ const Sidebar= ()=> {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <div>
-      <div className="images">
-        <img src={logo} alt="" />
-        {open && <FaTimes onClick={() => setOpen(!open)} />}
-      </div>
-      <div className="links">
-        {links.map((item) => {
-          const { id, url, text, icon } = item;
-          return (
-            <ul key={id}>
-              <li  >
-                {" "}
-                <Link to={url}>
-                  {icon}
-                  {text}
-                </Link>
-              </li>
-            </ul>
-          );
-        })}
-      </div>
-      <div className="social">
-        {social.map((item) => {
-          const { id, url, icon } = item;
-          return (
-            <a key={id} href={url}>
-              {" "}
-              {icon}{" "}
-            </a>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Toggle static offcanvas
+      </Button>
 
-export default Sidebar;
+      <Offcanvas show={show} onHide={handleClose} backdrop="static">
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          I will not close if you click outside of me.
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
+  );
+}
+
+export default Sidebar
