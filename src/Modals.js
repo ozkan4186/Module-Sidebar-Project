@@ -10,22 +10,26 @@ const Modals =() =>{
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+      <Button variant="outline-dark" onClick={handleShow} style={{
+        textAlign:"center",
+        margin:"5rem 20rem"
+      }} >
+      SHOW MODAL
       </Button>
+        
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+      <Modal  show={show} onHide={handleClose}>
+        <Modal.Header className='btn btn-danger'  closeButton>
           <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
+        </Modal.Header >
+           
+        <Modal.Footer className='text-center display-1 fw-bold ' >
+       
+       
+       
+        ÖZKAN DEMİR
+       
+       
         </Modal.Footer>
       </Modal>
     </>
