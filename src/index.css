@@ -56,17 +56,14 @@ Global Styles
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+ font-size: 1.5rem;
 }
-body {
- background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSn2gE4fl33yVnJO24L2SFp6B17UhJVb28HQ&usqp=CAU);
- background-repeat: no-repeat;
- background-size:cover;
- 
- 
- 
- 
- 
-}
+
+
+
+
+
+
 ul {
   list-style-type: none;
 }

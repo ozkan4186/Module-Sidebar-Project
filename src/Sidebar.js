@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link, useNavigate } from 'react-router-dom';
-import Modal from './Modals';
+import Modal from './Modal';
 import { FaBars } from 'react-icons/fa';
 
  const Sidebar= ()=> {
